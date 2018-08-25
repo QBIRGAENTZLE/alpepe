@@ -22,17 +22,33 @@ if ( ! function_exists( 'be_project_details' ) ) {
 		} else {
 			$output .= '<div class="portfolio-details '.$style.' oshine-module" style="text-align: '.$alignment.'">';
 			if((!is_page_template( 'gallery.php' )) || (!is_page_template( 'portfolio.php' ))) {
-				if(get_post_meta($post->ID,'be_themes_portfolio_client_name',true)) {
-					$output .= '<div class="gallery-side-heading-wrap portfolio-client-name clearfix"><h6 class="gallery-side-heading">'.__('Client', 'oshine-modules').'</h6>';
-					$output .= '<p><span class="project_client">'.get_post_meta($post->ID, 'be_themes_portfolio_client_name', true).'</span></p></div>';
+				if(get_post_meta($post->ID,'be_themes_portfolio_client',true)) {
+					$output .= '<div class="gallery-side-heading-wrap portfolio-client clearfix"><h6 class="gallery-side-heading">'.__('Client', 'oshine-modules').'</h6>';
+					$output .= '<p><span class="project-client">'.get_post_meta($post->ID, 'be_themes_portfolio_client', true).'</span></p></div>';
 				}
-				if(get_post_meta($post->ID,'be_themes_portfolio_project_date',true)) {
-					$output .= '<div class="gallery-side-heading-wrap portfolio-project-date clearfix"><h6 class="gallery-side-heading">'.__('Project Date', 'oshine-modules').'</h6>';
-					$output .= '<p><span class="project_client">'.get_post_meta($post->ID, 'be_themes_portfolio_project_date', true).'</span></p></div>';
+				if(get_post_meta($post->ID,'be_themes_portfolio_architects',true)) {
+					$output .= '<div class="gallery-side-heading-wrap portfolio-architects clearfix"><h6 class="gallery-side-heading">'.__('Architectes', 'oshine-modules').'</h6>';
+					$output .= '<p><span class="project-architects">'.get_post_meta($post->ID, 'be_themes_portfolio_architects', true).'</span></p></div>';
+				}
+				if(get_post_meta($post->ID,'be_themes_portfolio_place',true)) {
+					$output .= '<div class="gallery-side-heading-wrap portfolio-place clearfix"><h6 class="gallery-side-heading">'.__('Lieu', 'oshine-modules').'</h6>';
+					$output .= '<p><span class="project-place">'.get_post_meta($post->ID, 'be_themes_portfolio_place', true).'</span></p></div>';
+				}
+				if(get_post_meta($post->ID,'be_themes_portfolio_area',true)) {
+					$output .= '<div class="gallery-side-heading-wrap portfolio-area clearfix"><h6 class="gallery-side-heading">'.__('Surface', 'oshine-modules').'</h6>';
+					$output .= '<p><span class="project-area">'.get_post_meta($post->ID, 'be_themes_portfolio_area', true).'</span></p></div>';
+				}
+				if(get_post_meta($post->ID,'be_themes_portfolio_budget',true)) {
+					$output .= '<div class="gallery-side-heading-wrap portfolio-budget clearfix"><h6 class="gallery-side-heading">'.__('Budget', 'oshine-modules').'</h6>';
+					$output .= '<p><span class="project-budget">'.get_post_meta($post->ID, 'be_themes_portfolio_budget', true).'</span></p></div>';
+				}
+				if(get_post_meta($post->ID,'be_themes_portfolio_calendar',true)) {
+					$output .= '<div class="gallery-side-heading-wrap portfolio-calendar clearfix"><h6 class="gallery-side-heading">'.__('Calendrier', 'oshine-modules').'</h6>';
+					$output .= '<p><span class="project-calendar">'.get_post_meta($post->ID, 'be_themes_portfolio_calendar', true).'</span></p></div>';
 				}
 				if(get_be_themes_portfolio_category_list($post->ID, true)) {
 					$output .= '<div class="gallery-side-heading-wrap portfolio-category clearfix"><div class="gallery-cat-list-wrap">';
-					$output .= '<h6 class="gallery-side-heading">'.__('Category', 'oshine-modules').'</h6>';
+					$output .= '<h6 class="gallery-side-heading">'.__('Catégories', 'oshine-modules').'</h6>';
 					$output .= '<p>'.get_be_themes_portfolio_category_list($post->ID, true).'</p>';
 					$output .= '</div></div>';
 				}
