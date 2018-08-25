@@ -220,6 +220,14 @@ function be_themes_register_meta_boxes( $meta_boxes )
 				'tab'		=> 'portfolio_details'
 			),		
 			array (
+				'name'		=> __('Test Detail','oshin'),
+				'id'	=> "{$prefix}portfolio_test_detail",
+				'desc'		=> '',
+				'type'		=> 'text',
+				'std'		=> '',
+				'tab'		=> 'portfolio_details'
+			),
+			array (
 				'name'		=> __('Project Date','oshin'),
 				'id'	=> "{$prefix}portfolio_project_date",
 				'desc'		=> '',

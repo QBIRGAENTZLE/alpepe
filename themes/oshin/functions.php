@@ -884,4 +884,5 @@ function oshine_register_custom_font() {
     );
 	typehub_register_font( $hkgrotesk );	
 }
+
 ?>
